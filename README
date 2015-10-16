@@ -1,0 +1,53 @@
+
+Project 2: BitTorrent Client
+-----------------------
+
+Name:Vraj Parikh
+uname:parikhv
+
+Name:Marshal Patel
+uname:marshalp
+
+------------------------
+The final development of the BitTorrent (BT) client includes the following files.
+
+Included Files and Purpose:
+
+bt_client.cpp   :   Main file where the control loop lives
+bt_setup.cpp    :   Contains setup code, such as parsing arguments
+bt_lib.cpp      :   Code for core functionality of bt which includes setting, sending, receiving and parsing different messages.
+Socket.cpp	:   Code for core socket functionality.
+
+bt_setup.h    :   Header file for setup
+bt_lib.h      :   Header file for bt_lib
+Socket.h      :   Header file for Socket.cpp
+
+================================================================
+Tasks Accomplished:
+
+1. 1 seeder 1 leacher: Standard client protocol implemented which supports 1 seeder and 1 leecher.
+2. 1 seeder N leechers: Standard client protocol implemented which supports 1 seeder and N leechers.
+3. N seeder N leechers: Standard client protocol implemented which supports N seeders and N leechers.
+4. Additionally logging at the seeder end is implemented.
+================================================================
+
+Steps to compile and run:
+
+1. Navigate to the directory where the makefile and the source code file is present. Make sure they are present at the same
+   location.
+
+2. Type make and hit enter. Step 1 and 2 to be followed on both client and server machines.
+
+3. If no error is displayed, run the following command to run the seeder:
+   ./bt .torrent file -b seederip:port [-v]
+
+   for leechers:
+   ./bt .torrent file -p seederip:port [-v] -s outputfile.ext
+
+   incase of multiple seeders, repeat the arguments with -p option.
+
+4. Once the file sharing is completed, appropriate message will be printed at console. In case of any error, the program will be terminated
+   with appropriate error messages.
+
+
+
